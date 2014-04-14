@@ -1,28 +1,58 @@
-== README
+== REST API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== help (list database column definitions)
 
-Things you may want to cover:
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/help
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Example:
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/help
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== index
+
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items
+
+Example:
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items
+
+
+=== show
+
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/:database_id
+
+Example:
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/5
+
+
+=== for_tag
+
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/for_tag/:tag_name
+
+Example:
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/for_tag/eins
+
+
+=== create
+
+curl -X POST http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items -d "item[column1]=content" -d "item[columns2]=content"
+
+Example:
+curl -X POST http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items -d "item[content]=sampletext" -d "item[lat]=23.4" -d "item[lng]=53.8" -d "item[image_name]=sampleimage2.png" -d "item[tags][]=tag_1" -d "item[tags][]=tag_2"
+
+
+=== update
+
+curl -X PATCH http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/:database_id -d "item[column1]=content"
+
+Example:
+curl -X PATCH http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/1 -d "item[content]=newtext"
+
+
+=== delete
+
+curl -X DELETE http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/:database_id
+
+Example:
+curl -X DELETE http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/3
+
+

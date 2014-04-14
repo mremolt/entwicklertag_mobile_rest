@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   respond_to :json
-  before_filter :fetch_item, :except => [:index, :create, :for_tag]
+  before_filter :fetch_item, :except => [:index, :create, :for_tag, :help]
 
   def help
     respond_with Item.columns_hash
