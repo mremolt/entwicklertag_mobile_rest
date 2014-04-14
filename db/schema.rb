@@ -11,9 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140414091421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: true do |t|
+    t.string   "content"
+    t.string   "user",                    null: false
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.string   "image_name"
+    t.string   "tags",       default: [],              array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["user"], name: "index_items_on_user", using: :btree
 
 end

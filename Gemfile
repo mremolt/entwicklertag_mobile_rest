@@ -5,6 +5,8 @@ gem 'rails', '4.0.4'
 gem 'rails-api'
 gem 'pg'
 
+gem 'thin'
+
 group :production do
   gem 'rails_12factor'
 end

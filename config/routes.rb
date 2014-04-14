@@ -1,4 +1,13 @@
 EntwicklertagMobileRest::Application.routes.draw do
+  scope path: '/api/:user', defaults: { format: 'json' } do
+    resources :items, except: [:new, :edit] do
+      collection do
+        get :help
+        get 'for_tag/:tag', action: 'for_tag'
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
