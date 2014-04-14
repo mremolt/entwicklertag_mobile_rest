@@ -48,6 +48,7 @@ curl -X PATCH http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/:da
 
 Example:
 curl -X PATCH http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/1 -d "item[content]=newtext"
+curl -X PATCH http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/1 -d "item[remember_at]=2014-05-21 14:30"
 
 
 === delete
