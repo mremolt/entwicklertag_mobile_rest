@@ -5,8 +5,10 @@
 curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/:user/items/help
 
 Example:
-curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/help
 
+```bash
+curl -X GET http://entwicklertag-mobile-rest.herokuapp.com/api/mr/items/help
+```
 
 === index
 
