@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:content, :user, :lat, :lng, :image_name, {tags: []})
+    params.require(:item).permit(:content, :user, :lat, :lng, :image_name, :remember_at, {tags: []})
   end
 
   def fetch_item
